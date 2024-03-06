@@ -1,12 +1,4 @@
-from flask import Flask
-from markupsafe import escape
-
-app = Flask(__name__)
-
-@app.route("/")
-def hello():
-    return """
-           <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,10 +6,9 @@ def hello():
     <title>User</title>
 </head>
 <body>
-    <form action="" method="get">
         <input type="text" name="" id="user">
         <button onclick="user()">Send</button>
-    </form>
+
     <script>
         function user() {
             const Http = new XMLHttpRequest();
@@ -33,12 +24,3 @@ def hello():
     </script>
 </body>
 </html>
-            """
-
-@app.route("/user<user>", methods=["POST", "GET"])
-def user(user):
-    text = escape(user)
-    return(text)
-
-if __name__ == "__main__":
-    app.run()
