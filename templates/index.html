@@ -11,15 +11,9 @@
 
     <script>
         function user() {
-            const Http = new XMLHttpRequest();
-            let text = document.getElementById("user").text;
-            const url='eldablo81.pythonanywhere.com/user<' + text + '>';
-            Http.open("GET", url);
-            Http.send();
-
-            Http.onreadystatechange = (e) => {
-            console.log(Http.responseText)
-            }
+            var inputElement = document.getElementById("user");
+            var inputValue = inputElement.value;
+            window.location.href = "http://127.0.0.1:5000/user<" + inputValue + ">"
         }
     </script>
 </body>
