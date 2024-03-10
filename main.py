@@ -10,9 +10,7 @@ def hello():
 @app.route("/user<user>")
 def user(user):
     text = escape(user)
-    return f"""
-            <p> User:{text}<p>
-        """
+    return render_template("chat.html.jinja", user_name=text)
 
 if __name__ == "__main__":
     app.run()

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat</title>
+</head>
+<body>
+    <h1>Chat</h1>
+    <p>User: {{user_name}}</p>
+    {%macro message(testo, utente)%}
+        <p>{{utente}}: {{testo}}</p>
+    {%endmacro%}
+
+    <input type="text" id="get_message">
+    <button type="submit" onclick="{{ message(get_message.value, user_name) }}">Invia</button>
+
+
+</body>
+</html>
